@@ -67,7 +67,6 @@ const Navbar = () => {
             {item.text}
           </a>
         ))}
-        {/* Ícone após o texto "Seja voluntário" */}
         <button className="primary-button" onClick={scrollToHelp}>
           Seja voluntário <FaHandHoldingHeart className="navbar-heart-icon" />
         </button>

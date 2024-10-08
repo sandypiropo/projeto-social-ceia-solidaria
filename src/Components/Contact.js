@@ -10,16 +10,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar o e-mail
     console.log("Enviar seu endereço de Email:", email);
     
-    // Exibir a mensagem de sucesso
     setSuccessMessage("Enviado. Em breve entraremos em contato.");
 
-    // Limpar o campo após o envio
     setEmail("");
 
-    // Limpar a mensagem de sucesso após 10 segundos
     setTimeout(() => {
       setSuccessMessage("");
     }, 10000); // 10 segundosF

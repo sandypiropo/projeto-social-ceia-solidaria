@@ -18,21 +18,17 @@ const VolunteerForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Configurar EmailJS para enviar o formulário
     emailjs
       .send("service_yqax5hk", "template_gzouh9b", formData, "zgMjn0TwQAXcc12WI")
       .then((response) => {
         console.log("Mensagem enviada com sucesso!", response.status, response.text);
-        // Limpar os campos do formulário
         setFormData({
           name: "",
           email: "",
           phone: "",
           message: "",
         });
-        // Exibir a mensagem de sucesso
         setSuccessMessage(true);
-        // Ocultar a mensagem após 10 segundos
         setTimeout(() => {
           setSuccessMessage(false);
         }, 10000);
