@@ -6,8 +6,9 @@ O **Projeto Ceia Solidária SSA** tem como objetivo impactar positivamente a vid
 ---
 ### Prévia 
 
----
+![image](https://github.com/user-attachments/assets/f441e7d9-e561-45ff-a73f-d35fb9f96656)
 
+---
 ### Justificativa
 Garantir que, mesmo em tempos difíceis, pessoas em situação de vulnerabilidade possam ter uma refeição digna no Natal é o que motivou a criação do Projeto Ceia Solidária SSA. Diante das dificuldades econômicas e sociais que atingem muitos moradores de Salvador, a proposta é criar um momento especial de solidariedade e empatia.
 
