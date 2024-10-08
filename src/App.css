@@ -50,7 +50,7 @@ nav {
   font-weight: 600;
   transition: 0.2s;
 }
-.navbar-cart-icon {
+.navbar-heart-icon {
   font-size: 1.15rem;
 }
 .primary-button:hover {
@@ -73,9 +73,16 @@ nav {
   max-width: 700px;
 }
 .home-image-section {
-  max-width: 600px;
+  max-width: 700px;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Faz o contêiner da imagem ter uma posição controlada */
+  left: 50%; /* Move o contêiner 50% para a direita */
+  transform: translateX(5%); /* Centraliza o contêiner em relação a si mesmo */
 }
+
 .home-text-section {
   flex: 1;
   display: flex;
@@ -85,9 +92,11 @@ nav {
 }
 .primary-heading {
   font-size: clamp(2rem, 5vw, 4rem);
-  color: #4c4c4c;
+  color: #0a0a0a;
   /* line-height: 5rem; */
   max-width: 600px;
+  margin-top: 60px; /* Ajuste este valor conforme necessário */
+
 }
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
@@ -97,7 +106,7 @@ nav {
 }
 .secondary-button {
   padding: 1rem 2.5rem;
-  background-color: #fe9e0d;
+  background-color: #FF461E;
   outline: none;
   border: none;
   border-radius: 5rem;
@@ -109,13 +118,15 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 50px; /* Ajuste este valor conforme necessário */
 }
+
 .secondary-button svg {
   margin-left: 0.75rem;
   font-size: 1.5rem;
 }
 .secondary-button:hover {
-  background-color: #e48f0f;
+  background-color: #FF461E;
 }
 .about-section-container {
   margin-top: 20rem;
@@ -141,7 +152,7 @@ nav {
 }
 .primary-subheading {
   font-weight: 700;
-  color: #fe9e0d;
+  color: #FF461E;
   font-size: 1.15rem;
 }
 .about-buttons-container {
@@ -255,7 +266,7 @@ nav {
 .testimonials-stars-container svg {
   margin: 0rem 0.25rem;
   font-size: 1.5rem;
-  color: #fe9e0d;
+  color: #FF461E;
 }
 .testimonial-section-bottom h2 {
   margin-top: 1.5rem;
@@ -316,7 +327,7 @@ nav {
     font-size: 1rem;
   }
   .home-bannerImage-container {
-    max-width: 600px;
+    max-width: 400px;
   }
 }
 @media (max-width: 800px) {
@@ -425,4 +436,67 @@ nav {
   .about-background-image-container {
     display: none;
   }
+}
+
+.contact-page-wrapper h1 {
+  color: #0a0a0a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.volunteer-form-container {
+  background-color: white;
+  max-width: 700px;
+  width: 100%;
+  margin: 3rem auto; /* centraliza o formulário na tela */
+  padding: 2rem; /* adicione um preenchimento interno */
+  border-radius: 1rem; /* arredonda os cantos */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* adiciona uma sombra suave */
+  display: flex;
+  flex-direction: column; /* organiza os itens em coluna */
+}
+
+.volunteer-form-container h1 {
+  margin-bottom: 1.5rem; /* espaço abaixo do título */
+  color: #FF461E; /* cor do título, caso queira destacar */
+  text-align: center; /* centraliza o título */
+}
+
+.volunteer-form-container form {
+  display: flex;
+  flex-direction: column; /* organiza os campos em coluna */
+}
+
+.volunteer-form-container input,
+.volunteer-form-container textarea {
+  border: 1px solid #ccc; /* borda do campo */
+  border-radius: 5rem; /* arredondar os campos */
+  padding: 0.75rem; /* preenchimento interno */
+  margin-bottom: 1rem; /* espaço entre os campos */
+  font-size: 1rem; /* tamanho da fonte */
+  transition: border-color 0.2s; /* animação para mudança de cor na borda */
+}
+
+.volunteer-form-container input:focus,
+.volunteer-form-container textarea:focus {
+  border-color: #FF461E; /* muda a borda para a cor de destaque ao focar */
+  outline: none; /* remove a borda padrão do foco */
+}
+
+.volunteer-form-container button {
+  padding: 0.75rem 1.5rem; /* tamanho do botão */
+  background-color: #FF461E; /* cor de fundo do botão */
+  color: white; /* cor do texto */
+  border: none; /* remove borda padrão */
+  border-radius: 5rem; /* arredondar os cantos do botão */
+  font-size: 1.1rem; /* tamanho da fonte do botão */
+  cursor: pointer; /* muda o cursor para indicar que é clicável */
+  transition: background-color 0.2s; /* animação para mudança de cor */
+}
+
+.volunteer-form-container button:hover {
+  background-color: #d83b16; /* cor mais escura ao passar o mouse */
+}
+
+html {
+  scroll-behavior: smooth;
 }

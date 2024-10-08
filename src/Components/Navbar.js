@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-import Logo from "../Assets/Logo.svg";
-import { BsCart2 } from "react-icons/bs";
+import { FaHandHoldingHeart } from "react-icons/fa";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -13,48 +12,65 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
-import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import Logo from "../../src/Assets/logo.PNG";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
-      text: "Home",
+      text: "Início",
       icon: <HomeIcon />,
+      href: "#home",
     },
     {
-      text: "About",
+      text: "Sobre",
       icon: <InfoIcon />,
+      href: "#about",
     },
     {
-      text: "Testimonials",
-      icon: <CommentRoundedIcon />,
+      text: "Ajude",
+      icon: <FaHandHoldingHeart />,
+      href: "#howtohelp",
     },
     {
-      text: "Contact",
+      text: "Contato",
       icon: <PhoneRoundedIcon />,
-    },
-    {
-      text: "Cart",
-      icon: <ShoppingCartRoundedIcon />,
+      href: "#contact",
     },
   ];
+
+  const handleScroll = (event, id) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const scrollToHelp = (event) => {
+    event.preventDefault();
+    const element = document.getElementById("help");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <nav>
-      <div className="nav-logo-container">
+      <div id="navbar" className="nav-logo-container">
         <img src={Logo} alt="" />
       </div>
       <div className="navbar-links-container">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Testimonials</a>
-        <a href="">Contact</a>
-        <a href="">
-          <BsCart2 className="navbar-cart-icon" />
-        </a>
-        <button className="primary-button">Bookings Now</button>
+        {menuOptions.map((item) => (
+          <a href={item.href} key={item.text} onClick={(e) => handleScroll(e, item.href.slice(1))}>
+            {item.text}
+          </a>
+        ))}
+        {/* Ícone após o texto "Seja voluntário" */}
+        <button className="primary-button" onClick={scrollToHelp}>
+          Seja voluntário <FaHandHoldingHeart className="navbar-heart-icon" />
+        </button>
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
@@ -69,7 +85,7 @@ const Navbar = () => {
           <List>
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+                <ListItemButton component="a" href={item.href} onClick={(e) => handleScroll(e, item.href.slice(1))}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>
